@@ -20,12 +20,23 @@
         <h1 class="title">{{title}}</h1>
       </ion-header-bar>
       <ion-content>
+        <button class="button button-full button-positive" ng-click="isEnabled()">
+          Comprobar bluetooth
+        </button>
+        <button class="button button-full button-balanced" ng-click="getDevicesList()">
+          Listar dispositivos
+        </button>
+        <ul>
+          <li ng-repeat="device in devices">
+            {{device.name}}
+          </li>
+        </ul>
       </ion-content>
     </ion-pane>
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
